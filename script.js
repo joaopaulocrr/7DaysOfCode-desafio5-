@@ -1,0 +1,5 @@
+const frutas = []
+const laticínios = []
+const congelados = []
+const doces  = []
+const cereais = []
