@@ -5,19 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7DaysOfCode-desafio 5</title>
 </head>
-<body>
+<body id="corpo">
     <h1>7DaysOfCode</h1>
     <h2>Arrays e coleções</h2>
 
     <p>Olá, vamos criar sua lista de compras.</p>
+
     <p>Você deseja adicionar algum item na sua lista de compras?</p>
     <label for="sim">Sim</label>
     <input type="radio" name="simOuNao" id="sim"> <br>
 
     <label for="nao">Não</label>
     <input type="radio" name="simOuNao" id="nao">
+    <br>
+    <button id="buttonInicial">Confirmar</button>
 
-    <p id=""></p>
+    <p id="paragrafoAdicionarAlimento"></p>
+    <ul style="display: none;">
+        <li id="cereais">Cereais</li>
+        <li id="doces">Doces</li>
+        <li id="congelados">Congelados</li>
+        <li id="laticinios">Laticínios</li>
+        <li id="frutas">Frutas</li>
+    </ul>
 
     <script type="module" src="script.js"></script>
 </body>
