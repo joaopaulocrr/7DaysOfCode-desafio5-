@@ -1,5 +1,5 @@
 import { verificaChecked } from "./verificaChecked.js";
-const body = document.getElementById('corpo')
+export const body = document.getElementById('corpo')
 
 
 
@@ -25,12 +25,13 @@ const cereais = {
 }
 
 let listaDeCompras = [laticinios, cereais, doces, congelados, frutas]
+console.log()
 
 const yes = document.getElementById('sim')
 const no = document.getElementById('nao')
-const buttonInicial = document.getElementById('buttonInicial')
+export const buttonInicial = document.getElementById('buttonInicial')
 
 buttonInicial.addEventListener('click', () => {
     verificaChecked(yes, no)
-   
+    // buttonInicial.setAttribute('disabled' , '')
 })
