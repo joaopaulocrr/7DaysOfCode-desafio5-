@@ -18,16 +18,21 @@
     <label for="nao">Não</label>
     <input type="radio" name="simOuNao" id="nao">
     <br>
-    <button id="buttonInicial">Confirmar</button>
+    
 
-    <p id="paragrafoAdicionarAlimento"></p>
-    <ul style="display: none;">
-        <li id="cereais">Cereais</li>
-        <li id="doces">Doces</li>
-        <li id="congelados">Congelados</li>
-        <li id="laticinios">Laticínios</li>
-        <li id="frutas">Frutas</li>
-    </ul>
+    <span id="paragEinput">
+        <p id="paragrafoAdicionarAlimento"></p>
+    </span>
+
+    <select name="selectCategorias" id="selectCategorias" style="display: none;">
+
+        <option value="">Escolha uma categoria</option>
+        <option id="cereais" value="Cereais">Cereais</option>
+        <option id="doces" value="Doces">Doces</option>
+        <option id="congelados" value="Congelados">Congelados</option>
+        <option id="laticinios" value="Laticínios">Laticínios</option>
+        <option id="frutas" value="Frutas">Frutas</option>
+    </select>
 
     <script type="module" src="script.js"></script>
 </body>

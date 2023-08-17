@@ -1,37 +1,104 @@
-import { verificaChecked } from "./verificaChecked.js";
 export const body = document.getElementById('corpo')
 
+const paragrafoAdicionarAlimento = document.getElementById('paragrafoAdicionarAlimento')
+const ulCategorias = document.getElementById('ulDeCategorias')
+const addButton = document.getElementById('addButton')
 
-
-const frutas = { 
+const frutas = {
     name: "Frutas",
-    frutas: []
+    frutas: ['maçã', 'banana']
 }
-const doces = { 
+const doces = {
     name: "Doces",
-    doces: []
+    doces: ['bala', 'doce']
 }
-const congelados = { 
+const congelados = {
     name: "Congelados",
-    congelados: []
+    congelados: ['carne']
 }
-const laticinios = { 
+const laticinios = {
     name: "Laticinios",
-    laticinios: []
+    laticinios: ['queijo']
 }
-const cereais = { 
+const cereais = {
     name: "Cereais",
-    cereais: []
+    cereais: ['arroz']
 }
 
 let listaDeCompras = [laticinios, cereais, doces, congelados, frutas]
-console.log()
+
+const categorias = {}
+function adicionarItem(categoria, item) {
+    if (!categorias[categoria]) {
+        categorias[categoria] = []; // Inicializa a categoria se ainda não existir
+    }
+
+    categorias[categoria].push(item); // Adiciona o item à categoria
+}
+
+
+
+// frutas.frutas.push('morango')
+// console.log(frutas.name + ':' + frutas.frutas)
+
 
 const yes = document.getElementById('sim')
 const no = document.getElementById('nao')
+const buttonAdd = document.createElement('button')
+let novoItem = ''
+const paragrafoEinput = document.getElementById('paragEinput')
+const selectCategorias = document.getElementById('selectCategorias')
+
+
+yes.addEventListener('change', () => {
+    paragrafoAdicionarAlimento.innerText = 'Qual item você deseja adicionar?'
+    const inputItem = document.createElement('input')
+    paragrafoEinput.appendChild(inputItem)
+    inputItem.style.marginBottom = '12px'
+    inputItem.setAttribute('id', 'inputItem')
+    inputItem.focus()
+
+    selectCategorias.style.display ='block'
+   
+    body.appendChild(buttonAdd)
+    buttonAdd.style.display = 'block'
+    buttonAdd.textContent = 'Ok'
+    buttonAdd.setAttribute('id', 'addButton')
+
+    buttonAdd.addEventListener('click', () => {
+        if(selectCategorias.value == '') {
+            alert("Escolha uma categoria para adicionar o item:")
+        }else{
+
+            novoItem = inputItem.value
+          
+            
+            adicionarItem(selectCategorias.value, novoItem);
+            console.log(categorias);
+    
+            inputItem.value = ''
+            inputItem.focus()
+        }
+    })
+})
+
+no.addEventListener('change', () => {
+
+    paragrafoAdicionarAlimento.innerText = 'Ok! Aqui está a sua lista de compras atualizada:'
+    
+    body.removeChild(inputItem)
+    body.removeChild(buttonAdd)
+})
 export const buttonInicial = document.getElementById('buttonInicial')
 
-buttonInicial.addEventListener('click', () => {
-    verificaChecked(yes, no)
-    // buttonInicial.setAttribute('disabled' , '')
-})
+const objeto = {
+    nome: 'João',
+    idade: 30,
+    cidade: 'São Paulo'
+  };
+  
+  for (const prop in objeto) {
+    console.log(`${prop}: ${objeto[prop]}`);
+  }
+  
+                  
