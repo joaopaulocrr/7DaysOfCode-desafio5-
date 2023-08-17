@@ -1,31 +1,5 @@
-export const body = document.getElementById('corpo')
-
 const paragrafoAdicionarAlimento = document.getElementById('paragrafoAdicionarAlimento')
-// const ulCategorias = document.getElementById('ulDeCategorias')
-// const addButton = document.getElementById('addButton')
 
-// const frutas = {
-//     name: "Frutas",
-//     frutas: ['maçã', 'banana']
-// }
-// const doces = {
-//     name: "Doces",
-//     doces: ['bala', 'doce']
-// }
-// const congelados = {
-//     name: "Congelados",
-//     congelados: ['carne']
-// }
-// const laticinios = {
-//     name: "Laticinios",
-//     laticinios: ['queijo']
-// }
-// const cereais = {
-//     name: "Cereais",
-//     cereais: ['arroz']
-// }
-
-let listaDeCompras = [laticinios, cereais, doces, congelados, frutas]
 
 const categorias = {}
 function adicionarItem(categoria, item) {
@@ -35,12 +9,6 @@ function adicionarItem(categoria, item) {
 
     categorias[categoria].push(item); // Adiciona o item à categoria
 }
-
-
-
-
-// frutas.frutas.push('morango')
-// console.log(frutas.name + ':' + frutas.frutas)
 
 
 const yes = document.getElementById('sim')
@@ -86,6 +54,7 @@ yes.addEventListener('change', () => {
         }
     })
 })
+//------------//----------//----------------//-----------------------------//----------------------------//-------------
 
 no.addEventListener('change', () => {
  
@@ -99,10 +68,3 @@ no.addEventListener('change', () => {
         paragrafoAdicionarAlimento.innerHTML +=`<p>${prop}: ${categorias[prop]}</p>`
      }
 })
-// export const buttonInicial = document.getElementById('buttonInicial')
-  
-//   for (const prop in objeto) {
-//     console.log(`${prop}: ${objeto[prop]}`);
-//   }
-  
-                  
