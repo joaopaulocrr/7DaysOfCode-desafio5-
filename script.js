@@ -1,29 +1,29 @@
 export const body = document.getElementById('corpo')
 
 const paragrafoAdicionarAlimento = document.getElementById('paragrafoAdicionarAlimento')
-const ulCategorias = document.getElementById('ulDeCategorias')
-const addButton = document.getElementById('addButton')
+// const ulCategorias = document.getElementById('ulDeCategorias')
+// const addButton = document.getElementById('addButton')
 
-const frutas = {
-    name: "Frutas",
-    frutas: ['maçã', 'banana']
-}
-const doces = {
-    name: "Doces",
-    doces: ['bala', 'doce']
-}
-const congelados = {
-    name: "Congelados",
-    congelados: ['carne']
-}
-const laticinios = {
-    name: "Laticinios",
-    laticinios: ['queijo']
-}
-const cereais = {
-    name: "Cereais",
-    cereais: ['arroz']
-}
+// const frutas = {
+//     name: "Frutas",
+//     frutas: ['maçã', 'banana']
+// }
+// const doces = {
+//     name: "Doces",
+//     doces: ['bala', 'doce']
+// }
+// const congelados = {
+//     name: "Congelados",
+//     congelados: ['carne']
+// }
+// const laticinios = {
+//     name: "Laticinios",
+//     laticinios: ['queijo']
+// }
+// const cereais = {
+//     name: "Cereais",
+//     cereais: ['arroz']
+// }
 
 let listaDeCompras = [laticinios, cereais, doces, congelados, frutas]
 
@@ -35,6 +35,7 @@ function adicionarItem(categoria, item) {
 
     categorias[categoria].push(item); // Adiciona o item à categoria
 }
+
 
 
 
@@ -78,27 +79,30 @@ yes.addEventListener('change', () => {
     
             inputItem.value = ''
             inputItem.focus()
+
+            for (const prop in categorias) {
+                console.log(`${prop}: ${categorias[prop]}`);
+             }
         }
     })
 })
 
 no.addEventListener('change', () => {
+ 
 
     paragrafoAdicionarAlimento.innerText = 'Ok! Aqui está a sua lista de compras atualizada:'
     
-    body.removeChild(inputItem)
+    paragrafoEinput.removeChild(inputItem)
     body.removeChild(buttonAdd)
+    selectCategorias.style.display ='none'
+    for (const prop in categorias) {
+        paragrafoAdicionarAlimento.innerHTML +=`<p>${prop}: ${categorias[prop]}</p>`
+     }
 })
-export const buttonInicial = document.getElementById('buttonInicial')
-
-const objeto = {
-    nome: 'João',
-    idade: 30,
-    cidade: 'São Paulo'
-  };
+// export const buttonInicial = document.getElementById('buttonInicial')
   
-  for (const prop in objeto) {
-    console.log(`${prop}: ${objeto[prop]}`);
-  }
+//   for (const prop in objeto) {
+//     console.log(`${prop}: ${objeto[prop]}`);
+//   }
   
                   
